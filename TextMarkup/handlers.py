@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #author: David Pay
-#date: 06-16-2018
-import re
+#date: 06-16-2018 
+
 
 class Handler:
     def callback(self, prefix, name, *args):
@@ -77,6 +77,7 @@ class HTMLRenderer(Handler):
         
 
 if '__main__' == __name__:
+    import re
     handler = HTMLRenderer()
     test_text = r'This *is*  a test'
     handler.start('listitem')

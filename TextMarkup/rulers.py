@@ -5,6 +5,7 @@
 
 class Rule:
     type = ''
+
     def action(self, block, handler):
         handler.start(self.type)
         handler.feed(block)
@@ -13,6 +14,7 @@ class Rule:
 
 class HeadingRule(Rule):
     type = 'heading'
+    
     def condition(self, block):
         return not '\n' in block and len(block) <= 70 and not block[-1] == ':'
 
