@@ -22,8 +22,7 @@ while True:
             inputs.append(c)
         else:
             try:
-                data = r.recv(1024)
-                print(data)
+                data = r.recv(1024) 
                 disconnected = not data
             except socket.error:
                 disconnected = True
