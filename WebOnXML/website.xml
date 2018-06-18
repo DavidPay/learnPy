@@ -1,0 +1,32 @@
+<website>
+    <page name="index" title='home page'>
+        <h1>Welcome to My Home Page</h1>
+        <p>Hi , there. My name is David, and this is my home page. Here are some of my interests:</p>
+        <ul>
+            <li>
+                <a href="interests/shouting.html">shouting</a>
+            </li>
+            <li>
+                <a href="interests/sleeping.html">sleeping</a>
+            </li>
+            <li>
+                <a href="interests/eating.html">Eating</a>
+            </li>
+
+        </ul>
+    </page>
+    <directory name='interests'>
+        <page name="Shouting" title='Shouting'>
+            <h1>ShoutingPage</h1>
+            <p>..</p>
+        </page>
+        <page name="Sleeping" title='Sleeping'>
+            <h1>SleepingPage</h1>
+            <p>..</p>
+        </page>
+        <page name="Eating" title='Eating'>
+            <h1>EatingPage</h1>
+            <p>..</p>
+        </page>
+    </directory>
+</website>
