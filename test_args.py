@@ -44,6 +44,19 @@ def person1(name, age, *arg, height):
 def person2(name,age,*,height, **kw):
     print(name,age,height,kw)
 
+class PrivateO():
+    def __A1(self):
+        print("In private A1")
+    def B1(self):
+        print("call private __A1")
+        self.__A1() 
+        '''
+class argsIn():
+    @database.setter
+    def database(self, s=""):
+        print(s) 
+        #name database is not defined
+        '''
 if __name__ == "__main__":
     print(power(3))
     print(power(3,3))
@@ -62,3 +75,49 @@ if __name__ == "__main__":
     #person1(**david2) # unexpected keyword argument
     david4 = {'age':32, 'height':1.72, 'weight':100,'name':'david' }
     person2(**david4)
+
+
+    private1 = PrivateO()
+ #   private1.__A1()  
+    private1._PrivateO__A1()
+
+    #self should not be self
+    '''
+    http://www.cnblogs.com/jessonluo/p/4717140.html
+    <__main__.Test object at 0x000001E50F2BB860>
+    <class '__main__.Test'>
+    '''
+    class Test:
+        def prtNoArgs():
+            '''
+            class method. 
+            called
+            as Test.prtNoArgs()
+            '''
+            print("In prtNoArgs()")
+            print('\n')
+        def prt(that):
+            '''
+            called as
+            t = Test()
+            t.prt() or Test.prt(t)
+            '''
+            print("In prt(that)")
+            print(that)
+            print(that.__class__)
+            print('\n')
+
+    t = Test()
+    Test.prt(t) #
+    Test.prtNoArgs()
+    class Desc:
+        def __get__(self, ins, cls):
+            print('self in Desc: %s ' % self )
+            print(self, ins, cls)
+    class Test2:
+        x = Desc()
+        def prt(self):
+            print('self in Test: %s' % self)
+    t2 = Test2()
+    t2.prt()
+    t2.x
